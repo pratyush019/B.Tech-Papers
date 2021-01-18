@@ -8,16 +8,12 @@ After downloading papers you can view them even when you are offline.
 Download Size of papers are small so you can download them on metered connections.
 If you wish to see only downloaded papers you can change your preference.
 
-Credits:
+![Alt Text](https://github.com/pratyush019/B.Tech-Papers/blob/main/ezgif.com-gif-maker.gif)
 
-Ashutosh Nirala - For designing awesome launcher icon
+App link- https://play.google.com/store/apps/details?id=com.tlabs.btechpapers
 
-Vivek Naini - For providing papers
-
-https://icons8.com/ - For awesome app icons
-
-
-
+For First Years a seperate app has been made
+App link- https://play.google.com/store/apps/details?id=com.tlabs.firstyearpapers
 
 
 
