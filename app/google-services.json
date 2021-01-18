@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "784027260357",
+    "firebase_url": "https://btech-papers.firebaseio.com",
+    "project_id": "btech-papers",
+    "storage_bucket": "btech-papers.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:784027260357:android:bbc4c1941bd60087a0a7ac",
+        "android_client_info": {
+          "package_name": "com.tlabs.btechpapers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "784027260357-tjp7i75im20nrr3flehmrrmk8l9b850r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtbjOJPJeMYT6vtGlDYlCeJxozztejpuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "784027260357-tjp7i75im20nrr3flehmrrmk8l9b850r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

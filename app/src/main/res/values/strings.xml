@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">B.Tech Papers</string>
+    <string name="m3">MID SEM-3</string>
+    <string name="e3">END SEM-3</string>
+    <string name="m4">MID SEM-4</string>
+    <string name="e4">END SEM-4</string>
+    <string name="m5">MID SEM-5</string>
+    <string name="e5">END SEM-5</string>
+    <string name="m6">MID SEM-6</string>
+    <string name="e6">END SEM-6</string>
+    <string name="m7">MID SEM-7</string>
+    <string name="e7">END SEM-7</string>
+    <string name="m8">MID SEM-8</string>
+    <string name="e8">END SEM-8</string>
+    <string name="mech">MECHANICAL</string>
+    <string name="ece">ECE</string>
+    <string name="pie">PIE</string>
+    <string name="bt">BIO-TECH</string>
+    <string name="civil">CIVIL</string>
+    <string name="chemical">CHEMICAL</string>
+    <string name="cse">CSE</string>
+    <string name="it">IT</string>
+    <string name="electrical">ELECTRICAL</string>
+    <string name="msg"> </string>
+    <string name="msg1">No Papers to show</string>
+    <!-- My adUnit id ca-app-pub-5413633427338044/9456269807
+   Sample AdMob adUnit id ca-app-pub-3940256099942544/6300978111-->
+    <string name="adUnit">ca-app-pub-5413633427338044/9456269807</string>
+    <string name="downloadDescription">For Downloading</string>
+    <string name="deleteDescription">For Deleting</string>
+    <string name="uploadInfo">Want to Contribute? Send Papers</string>
+    <string name="noFile">No file selected</string>
+    <string-array name="branch">
+        <item>Select</item>
+        <item>Mechanical</item>
+        <item>ECE</item>
+        <item>Civil</item>
+        <item>PIE </item>
+        <item>Biotech</item>
+        <item>Chemical</item>
+        <item>CSE</item>
+        <item>IT</item>
+        <item>Electrical</item>
+    </string-array>
+    <string-array name="sem">
+        <item>Select</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6 </item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+</resources>
