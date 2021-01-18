@@ -8,7 +8,7 @@ After downloading papers you can view them even when you are offline.
 Download Size of papers are small so you can download them on metered connections.
 If you wish to see only downloaded papers you can change your preference.
 
-![Alt Text](https://github.com/pratyush019/B.Tech-Papers/blob/main/ezgif.com-gif-maker.gif)
+![Alt Text](https://github.com/pratyush019/B.Tech-Papers/blob/main/sample.gif)
 
 App link- https://play.google.com/store/apps/details?id=com.tlabs.btechpapers
 
