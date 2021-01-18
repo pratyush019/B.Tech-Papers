@@ -19,7 +19,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-5413633427338044~3637726711" />
+            android:value="ca-app-pub-xxxxxxxxxxxxxxxxxxxxxx" />
 
         <activity
             android:name=".Activity.Papers"
