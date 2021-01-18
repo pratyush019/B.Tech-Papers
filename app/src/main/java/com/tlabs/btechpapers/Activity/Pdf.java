@@ -42,7 +42,7 @@ public class Pdf extends AppCompatActivity {
         if(string != null) {
             file = new File(string);
             pdfView= findViewById(R.id.pdf);
-            pdfView.fromFile(file).nightMode(true).load();
+            pdfView.fromFile(file).nightMode(false).load();
         }
         else
             Toast.makeText(this, "Error!", Toast.LENGTH_SHORT).show();
