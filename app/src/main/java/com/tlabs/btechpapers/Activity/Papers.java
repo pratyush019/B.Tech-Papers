@@ -1,30 +1,43 @@
+/*
+ * Copyright 2020 Pratyush Tiwari
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * Created by Pratyush Tiwari on 31/1/21 7:35 PM
+ *  Last modified 31/1/21 7:21 PM
+ *
+ *
+ */
+
 package com.tlabs.btechpapers.Activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.RequestConfiguration;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.tlabs.btechpapers.Adapters.PaperAdapter;
+import com.tlabs.btechpapers.HelperClasses.AdHelper;
 import com.tlabs.btechpapers.HelperClasses.Methods;
 import com.tlabs.btechpapers.R;
 
-import java.util.Arrays;
 import java.util.Objects;
 
-import static com.tlabs.btechpapers.HelperClasses.Methods.shouldShowOnlyDownloadedPapers;
 import static com.tlabs.btechpapers.HelperClasses.RouteProvider.getCurrentAdapter;
 
 public class Papers extends AppCompatActivity {
@@ -43,19 +56,10 @@ public class Papers extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(paperAdapter);
 
+        AdView adView=findViewById(R.id.adView);
+        AdHelper.implementBanner(this,adView);
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-        MobileAds.setRequestConfiguration(
-                new RequestConfiguration.Builder().setTestDeviceIds(Arrays.asList("0695B8604F36AF93F85B9BC0066ECC40",
-                        "E9E31BF2C454A460DE01EF90938C12A1"))
-                        .build());
-        final AdView adView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
+
 
        /* adView.setAdListener(new AdListener() {
             @Override
@@ -108,7 +112,7 @@ public class Papers extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id=item.getItemId();
-         if (id==R.id.toggle){
+       /*  if (id==R.id.toggle){
             if (shouldShowOnlyDownloadedPapers(this)){
                 Methods.saveTogglePreference(this,false);
                 Toast.makeText(this, "Showing all papers", Toast.LENGTH_LONG).show();
@@ -123,6 +127,42 @@ public class Papers extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+         else */ if(id==R.id.online){
+
+             if (Methods.isFirstOpen(this,"intro")){
+
+                 AlertDialog.Builder builder=Methods.builder(this,"Online Mode",
+                         "Welcome to online mode.\nHere you can share your contents with others and can view shared" +
+                                 " contents as well.\nYou can share contents in pdf format having size less than 3MB.\n" +
+                                 "By clicking CONTINUE you agree not to upload any irrelevant contents and content which are protected" +
+                                 " by copyright laws.");
+                 builder.setCancelable(false);
+                 builder.setPositiveButton("CONTINUE", new DialogInterface.OnClickListener() {
+                     @Override
+                     public void onClick(DialogInterface dialogInterface, int i) {
+                         Methods.saveFirstOpen(Papers.this,false,"intro");
+                         Intent intent = new Intent(Papers.this, OnlineView.class);
+                         intent.putExtra("sem", sem);
+                         intent.putExtra("branch", branch);
+                         startActivity(intent);
+                         finish();
+                     }
+                 }).setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                     @Override
+                     public void onClick(DialogInterface dialogInterface, int i) {
+                         dialogInterface.dismiss();
+                     }
+                 }).show();
+
+
+             } else {
+                 Intent intent = new Intent(this, OnlineView.class);
+                 intent.putExtra("sem", sem);
+                 intent.putExtra("branch", branch);
+                 startActivity(intent);
+                 finish();
+             }
+         }
         return true;
     }
 }

@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) 2020 Pratyush Tiwari.
+ */
+
+/*
+ * Copyright (c) 2020.
+ */
+
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {

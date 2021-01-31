@@ -1,3 +1,21 @@
+/*
+ * Copyright 2020 Pratyush Tiwari
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * Created by Pratyush Tiwari on 31/1/21 7:35 PM
+ *  Last modified 31/1/21 7:21 PM
+ *
+ *
+ */
+
 package com.tlabs.btechpapers.HelperClasses;
 
 import android.app.Activity;
@@ -95,14 +113,8 @@ public class Methods {
                 boolean deleted = file.delete();
 
                 if (deleted && !file.exists()) {
-                    if (shouldShowOnlyDownloadedPapers(context)) {
-                        download.setVisibility(View.GONE);
-                        button.setVisibility(View.GONE);
-                    }
-                    else {
                         download.setVisibility(View.VISIBLE);
                         button.setEnabled(false);
-                    }
                     delete.setVisibility(View.GONE);
                     Toast.makeText(context, "Deleted Successfully!", Toast.LENGTH_SHORT).show();
                 } else {
@@ -121,7 +133,7 @@ public class Methods {
     }
 
     public static void validate(File file, ImageView download, Button button, ImageView delete, Context context) {
-        if (shouldShowOnlyDownloadedPapers(context)) {
+     /*   if (shouldShowOnlyDownloadedPapers(context)) {
             if (file.exists()) {
                 download.setVisibility(View.GONE);
                 button.setEnabled(true);
@@ -131,7 +143,7 @@ public class Methods {
                 button.setVisibility(View.GONE);
                 delete.setVisibility(View.GONE);
             }
-        } else {
+        } else { */
             if (file.exists()) {
                 download.setVisibility(View.GONE);
                 button.setEnabled(true);
@@ -141,7 +153,6 @@ public class Methods {
                 button.setEnabled(false);
                 delete.setVisibility(View.GONE);
             }
-        }
 
     }
 
@@ -214,15 +225,15 @@ public class Methods {
         editor.apply();
     }
 
-    public static void saveFirstOpen(Context context, boolean firstOpen) {
+    public static void saveFirstOpen(Context context, boolean firstOpen,String which) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("firstOpen", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean("firstOpen", firstOpen);
+        editor.putBoolean(which, firstOpen);
         editor.apply();
     }
-    public static boolean isFirstOpen(Context context) {
+    public static boolean isFirstOpen(Context context,String which) {
         return context.getSharedPreferences("firstOpen", MODE_PRIVATE)
-                .getBoolean("firstOpen", true);
+                .getBoolean(which, true);
     }
 
     public static boolean shouldShowOnlyDownloadedPapers(Context context) {
@@ -275,10 +286,10 @@ public class Methods {
         i.setData(Uri.parse("https://pratyush019.github.io/policy.html"));
         activity.startActivity(i);
     }
-    public static void contactDeveloper(Activity activity) {
+    public static void contactDeveloper(Activity activity,String subject,String body) {
         Intent mailIntent = new Intent(Intent.ACTION_VIEW);
-        Uri data = Uri.parse("mailto:?subject=" + "Regarding B.Tech Papers application"+
-                "&body=" + "## If your mail is about any error then do send us screenshots/screenvideo of error with your device name and model\n\n" + "&to=" + "care4tlabs@gmail.com");
+        Uri data = Uri.parse("mailto:?subject=" + subject+
+                "&body=" + body + "&to=" + "care4tlabs@gmail.com");
         mailIntent.setData(data);
         activity.startActivity(Intent.createChooser(mailIntent, "Send mail..."));
     }

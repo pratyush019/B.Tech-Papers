@@ -1,3 +1,21 @@
+/*
+ * Copyright 2020 Pratyush Tiwari
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * Created by Pratyush Tiwari on 31/1/21 7:35 PM
+ *  Last modified 31/1/21 7:21 PM
+ *
+ *
+ */
+
 package com.tlabs.btechpapers.AdapterPicker;
 
 import android.content.Context;
@@ -110,6 +128,11 @@ public class MECHANICAL {
                 buttonText.add("POM 17-18");
                 buttonText.add("SPE 18-19");
                 buttonText.add("POM 18-19");
+                buttonText.add("MD 19-20");
+                buttonText.add("SPE 19-20");
+                buttonText.add("CAD 19-20");
+                buttonText.add("MST 19-20");
+                buttonText.add("POM 19-20");
 
                 targetFile.add(new File(folder,"CAD mid 16-17.pdf"));
                 targetFile.add(new File(folder,"CAD mid 17-18.pdf"));
@@ -120,6 +143,11 @@ public class MECHANICAL {
                 targetFile.add(new File(folder,"POM mid 17-18.pdf"));
                 targetFile.add(new File(folder,"Steam 18-19 mid.pdf"));
                 targetFile.add(new File(folder,"pom 18-19 mid.pdf"));
+                targetFile.add(new File(folder,"MD 1 mid 19-20.pdf"));
+                targetFile.add(new File(folder,"SPE mid 19-20.pdf"));
+                targetFile.add(new File(folder,"cad mid 19-20.pdf"));
+                targetFile.add(new File(folder,"mst 1 mid 19-20.pdf"));
+                targetFile.add(new File(folder,"pom mid 19-20.pdf"));
 
                 downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fm5%2FCAD%20mid%2016-17.pdf?alt=media&token=f678ec9d-2940-4488-a0df-c9d369ab0033");
                 downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fm5%2FCAD%20mid%2017-18.pdf?alt=media&token=6a3f79bb-fa1e-4472-86e3-2473aa1f70cd");
@@ -130,7 +158,11 @@ public class MECHANICAL {
                 downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fm5%2FPOM%20mid%2017-18.pdf?alt=media&token=be0f2904-3409-4c8a-b8e5-d48e69ecb2a9");
                 downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fm5%2FSteam%2018-19%20mid.pdf?alt=media&token=4f71ba24-7dd5-484a-a394-f0cd33a31135");
                 downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fm5%2Fpom%2018-19%20mid.pdf?alt=media&token=53544fa4-d6b7-4354-ae5b-db174a675b9c");
-
+                downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fm5%2FMD%201%20mid%2019-20.pdf?alt=media&token=3452e4ba-41fc-4db7-8b7a-461e27565784");
+                downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fm5%2FSPE%20mid%2019-20.pdf?alt=media&token=7568a499-14f6-404d-9ec6-b29f43f43fcd");
+                downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fm5%2Fcad%20mid%2019-20.pdf?alt=media&token=8de5205d-4250-4a21-bd68-4ccff34ea4da");
+                downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fm5%2Fmst%201%20mid%2019-20.pdf?alt=media&token=a7120f3d-7770-4d50-99eb-59d240cf5a65");
+                downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fm5%2Fpom%20mid%2019-20.pdf?alt=media&token=1afce04c-175f-4937-9dc8-569e822efc81");
 
 
 
@@ -139,16 +171,28 @@ public class MECHANICAL {
                 buttonText.add("CAM 16-17");
                 buttonText.add("MD 17-18");
                 buttonText.add("MST 17-18");
+                buttonText.add("MD 19-20");
+                buttonText.add("CAM 19-20");
+                buttonText.add("ICE 19-20");
+                buttonText.add("MST 19-20");
 
                 targetFile.add(new File(folder,"CAM mid 16-17.pdf"));
                 targetFile.add(new File(folder,"MD II mid 17-18.pdf"));
                 targetFile.add(new File(folder,"MST mid 17-18.pdf"));
+                targetFile.add(new File(folder,"MD II 19-20 mid.pdf"));
+                targetFile.add(new File(folder,"cam mid 19-20.pdf"));
+                targetFile.add(new File(folder,"ice mid 19-20.pdf"));
+                targetFile.add(new File(folder,"mst II mid 19-20.pdf"));
+
 
 
                 downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fm6%2FCAM%20mid%2016-17.pdf?alt=media&token=c0dfaf91-c331-4c0f-98a0-22a4a272337b");
                 downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fm6%2FMD%20II%20mid%2017-18.pdf?alt=media&token=fc396f05-7018-4f9f-805e-8a55de5ae020");
                 downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fm6%2FMST%20mid%2017-18.pdf?alt=media&token=f2affd4d-0f76-4b0d-a3ad-410eb417ce37");
-
+                downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fm6%2FMD%20II%2019-20%20mid.pdf?alt=media&token=51e668bd-2f69-4c4b-86eb-c3c124f716cf");
+                downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fm6%2Fcam%20mid%2019-20.pdf?alt=media&token=e92dc303-698b-4105-b618-eb7a1b5ecc5a");
+                downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fm6%2Fice%20mid%2019-20.pdf?alt=media&token=9c87f62e-0f81-4b3f-9469-a732f757a173");
+                downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fm6%2Fmst%20II%20mid%2019-20.pdf?alt=media&token=4cedd698-65a6-4b60-b9a0-4335459ac574");
 
             break;
             case "MID SEM-7":
@@ -258,17 +302,31 @@ public class MECHANICAL {
                 buttonText.add("MD 16-17");
                 buttonText.add("MST 16-17");
                 buttonText.add("POM 16-17");
+                buttonText.add("MD 19-20");
+                buttonText.add("SPE 19-20");
+                buttonText.add("CAD 19-20");
+                buttonText.add("MST 19-20");
+                buttonText.add("POM 19-20");
 
                 targetFile.add(new File(folder,"CAD 16-17 end.pdf"));
                 targetFile.add(new File(folder,"MD 16-17 end.pdf"));
                 targetFile.add(new File(folder,"MST 16-17 end.pdf"));
                 targetFile.add(new File(folder,"POM 16-17 end.pdf"));
+                targetFile.add(new File(folder,"MD 1 end 19-20.pdf"));
+                targetFile.add(new File(folder,"SPE end 19-20.pdf"));
+                targetFile.add(new File(folder,"cad end 19-20.pdf"));
+                targetFile.add(new File(folder,"mst 1 end 19-20.pdf"));
+                targetFile.add(new File(folder,"pom end 19-20.pdf"));
 
                 downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fe5%2FCAD%2016-17%20end.pdf?alt=media&token=c404332a-fd27-4248-8b8e-36f9ad04169d");
                 downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fe5%2FMD%2016-17%20end.pdf?alt=media&token=426a7203-4eac-4521-98a6-fc4b44d765ac");
                 downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fe5%2FMST%2016-17%20end.pdf?alt=media&token=4537f7d9-c218-48fd-9781-f6492dc56bfa");
                 downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fe5%2FPOM%2016-17%20end.pdf?alt=media&token=4a1eab26-49f2-4876-b2db-3c2fc0c6feb5");
-
+                downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fe5%2FMD%201%20end%2019-20.pdf?alt=media&token=b5a162fa-9e12-4d34-ba11-284335b74bb2");
+                downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fe5%2FSPE%20end%2019-20.pdf?alt=media&token=20e59bcc-5370-47f1-af8b-3819473f9b21");
+                downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fe5%2Fcad%20end%2019-20.pdf?alt=media&token=25de51f4-4718-41ac-9d33-7e5b583b2a75");
+                downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fe5%2Fmst%201%20end%2019-20.pdf?alt=media&token=ea8db3f6-d2f9-450a-89ec-2adc05d9ab8d");
+                downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fe5%2Fpom%20end%2019-20.pdf?alt=media&token=b989cc04-8255-49eb-898e-5977983bc643");
 
 
             break;
@@ -276,15 +334,17 @@ public class MECHANICAL {
                 buttonText.add("CAM 16-17");
                 buttonText.add("MD 17-18");
                 buttonText.add("MD 16-17");
+                buttonText.add("Automobile 19-20");
 
                 targetFile.add(new File(folder,"CAM end 16-17.pdf"));
                 targetFile.add(new File(folder,"MD II end 17-18.pdf"));
                 targetFile.add(new File(folder,"MD end 16-17.pdf"));
+                targetFile.add(new File(folder,"automobile end 19-29.pdf"));
 
                 downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fe6%2FCAM%20end%2016-17.pdf?alt=media&token=41c2411c-8995-4155-a8b0-5982c79cb4bd");
                 downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fe6%2FMD%20II%20end%2017-18.pdf?alt=media&token=a9a6e97c-f581-4c5c-89e8-ab9332333ec3");
                 downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fe6%2FMD%20end%2016-17.pdf?alt=media&token=84c18947-56ae-4274-a829-0937394c500c");
-
+                downloadURL.add("https://firebasestorage.googleapis.com/v0/b/btech-papers.appspot.com/o/mechanical%2Fe6%2Fautomobile%20end%2019-29.pdf?alt=media&token=82f3d7e5-e1cc-4dec-b5bc-b8eebf2f8207");
 
 
             break;
