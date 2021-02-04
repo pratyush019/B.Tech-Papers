@@ -18,12 +18,15 @@
 
 package com.tlabs.btechpapers.Activity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -34,6 +37,8 @@ import com.tlabs.btechpapers.R;
 
 import java.util.ArrayList;
 
+import static com.tlabs.btechpapers.HelperClasses.Methods.isNightModeActive;
+
 
 public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -43,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-      //  AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        if(isNightModeActive(this))
+      AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         recyclerView=findViewById(R.id.cardRecyclerView);
         recyclerView.setLayoutManager(new GridLayoutManager(this,3));
 
@@ -137,7 +144,36 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id=item.getItemId();
 
-        if (id==R.id.share){
+        if(id==R.id.theme){
+            final int[] checkedItem = {0};
+            if(isNightModeActive(this))
+                checkedItem[0] =1;
+            AlertDialog.Builder builder=new AlertDialog.Builder(this);
+            builder.setTitle("Choose theme");
+            builder.setSingleChoiceItems(new String[]{"Light", "Dark"}, checkedItem[0], new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                   checkedItem[0] =i;
+                }
+            }).setPositiveButton("APPLY", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                if(checkedItem[0]==0){
+                    Methods.saveThemePrefs(getApplicationContext(),false);
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                } else {
+                    Methods.saveThemePrefs(getApplicationContext(),true);
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                }
+                }
+            }).setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.dismiss();
+                }
+            }).create().show();
+        }
+      else  if (id==R.id.share){
             Methods.shareApp(this);
         }
         if (id==R.id.rate){

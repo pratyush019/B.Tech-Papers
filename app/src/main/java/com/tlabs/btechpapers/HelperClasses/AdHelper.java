@@ -30,7 +30,7 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import java.util.Arrays;
 
 public class AdHelper {
-    private AdHelper(){};
+    private AdHelper(){}
     public static void implementBanner(Context context,AdView adView){
         MobileAds.initialize(context, new OnInitializationCompleteListener() {
             @Override
@@ -43,5 +43,12 @@ public class AdHelper {
                         .build());
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
+     /*   adView.setAdListener(new AdListener(){
+            @Override
+            public void onAdFailedToLoad(LoadAdError loadAdError) {
+                super.onAdFailedToLoad(loadAdError);
+                Log.d("error******",loadAdError.toString());
+            }
+        }); */
     }
 }

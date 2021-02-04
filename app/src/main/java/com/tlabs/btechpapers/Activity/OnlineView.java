@@ -41,6 +41,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -69,6 +70,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
 
+import static com.tlabs.btechpapers.HelperClasses.Methods.isNightModeActive;
+
 public class OnlineView extends AppCompatActivity {
     String sem,branch;
     View view,dialogView;
@@ -87,6 +90,9 @@ public class OnlineView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_papers);
+        if(isNightModeActive(this))
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         sem=getIntent().getStringExtra("sem");
         branch =getIntent().getStringExtra("branch");
         Objects.requireNonNull(getSupportActionBar()).setTitle(sem);
@@ -208,7 +214,7 @@ public class OnlineView extends AppCompatActivity {
                 }
             });
             final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                   builder .setTitle("Add Content");
+                   builder .setTitle("Share Content").setMessage(getApplicationContext().getResources().getString(R.string.online_info));
                    if (view.getParent()!=null)
                        ((ViewGroup)view.getParent()).removeView(view);
                     builder.setView(view);

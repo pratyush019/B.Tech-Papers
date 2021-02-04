@@ -24,7 +24,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
@@ -132,7 +131,7 @@ public class Methods {
 
     }
 
-    public static void validate(File file, ImageView download, Button button, ImageView delete, Context context) {
+    public static void validate(File file, ImageView download, Button button, ImageView delete) {
      /*   if (shouldShowOnlyDownloadedPapers(context)) {
             if (file.exists()) {
                 download.setVisibility(View.GONE);
@@ -196,7 +195,7 @@ public class Methods {
         params.gravity = Gravity.CENTER;
         TextView tvText = new TextView(context);
         tvText.setText(message);
-        tvText.setTextColor(Color.parseColor("#000000"));
+       // tvText.setTextColor(Color.parseColor("#000000"));
         tvText.setLayoutParams(params);
 
         linearLayout.addView(progressBar);
@@ -356,5 +355,14 @@ public class Methods {
         AlertDialog.Builder builder = new AlertDialog.Builder(Objects.requireNonNull(context));
         builder.setTitle(title).setMessage(message);
         return builder;
+    }
+    public static boolean isNightModeActive(Context context){
+       return context.getSharedPreferences("theme",MODE_PRIVATE).getBoolean("mode",false);
+    }
+    public static void saveThemePrefs(Context context,boolean isActive){
+        SharedPreferences sharedPreferences=context.getSharedPreferences("theme",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("mode",isActive);
+        editor.apply();
     }
 }

@@ -21,6 +21,7 @@ package com.tlabs.btechpapers.Activity;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,6 +30,8 @@ import com.tlabs.btechpapers.R;
 
 import java.util.ArrayList;
 import java.util.Objects;
+
+import static com.tlabs.btechpapers.HelperClasses.Methods.isNightModeActive;
 
 public class Sem extends AppCompatActivity {
     String branch;
@@ -39,6 +42,9 @@ public class Sem extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sem);
+        if(isNightModeActive(this))
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         recyclerView=findViewById(R.id.cardRecyclerView);
         recyclerView.setLayoutManager(new GridLayoutManager(this,2));
         branch=getIntent().getStringExtra("branch");

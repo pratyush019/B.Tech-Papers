@@ -27,6 +27,7 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -38,6 +39,7 @@ import com.tlabs.btechpapers.R;
 
 import java.util.Objects;
 
+import static com.tlabs.btechpapers.HelperClasses.Methods.isNightModeActive;
 import static com.tlabs.btechpapers.HelperClasses.RouteProvider.getCurrentAdapter;
 
 public class Papers extends AppCompatActivity {
@@ -48,6 +50,9 @@ public class Papers extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_papers);
+        if(isNightModeActive(this))
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         sem=getIntent().getStringExtra("sem");
         branch =getIntent().getStringExtra("branch");
         Objects.requireNonNull(getSupportActionBar()).setTitle(sem);

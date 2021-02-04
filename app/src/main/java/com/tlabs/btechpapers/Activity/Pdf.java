@@ -26,11 +26,14 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.github.barteksc.pdfviewer.PDFView;
 import com.tlabs.btechpapers.R;
 
 import java.io.File;
+
+import static com.tlabs.btechpapers.HelperClasses.Methods.isNightModeActive;
 
 public class Pdf extends AppCompatActivity {
     PDFView pdfView;
@@ -42,7 +45,9 @@ public class Pdf extends AppCompatActivity {
         super.onCreate(savedInstanceState);
        // getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,WindowManager.LayoutParams.FLAG_SECURE);
         setContentView(R.layout.activity_pdf);
-
+        if(isNightModeActive(this))
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             final WindowInsetsController insetsController = getWindow().getInsetsController();
@@ -60,7 +65,7 @@ public class Pdf extends AppCompatActivity {
         if(string != null) {
             file = new File(string);
             pdfView= findViewById(R.id.pdf);
-            pdfView.fromFile(file).nightMode(false).load();
+            pdfView.fromFile(file).nightMode(isNightModeActive(this)).load();
         }
         else
             Toast.makeText(this, "Error!", Toast.LENGTH_SHORT).show();

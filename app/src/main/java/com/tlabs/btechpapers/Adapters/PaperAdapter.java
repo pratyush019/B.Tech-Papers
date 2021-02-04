@@ -65,7 +65,7 @@ public class PaperAdapter extends RecyclerView.Adapter<PaperAdapter.ViewHolder> 
         final File file=fileList.get(position);
         final  String url=downloadURL.get(position);
         holder.button.setText(string);
-        Methods.validate(file,holder.download,holder.button,holder.delete,appContext);
+        Methods.validate(file,holder.download,holder.button,holder.delete);
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

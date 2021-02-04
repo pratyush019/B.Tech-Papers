@@ -2,9 +2,6 @@
  * Copyright (c) 2020 Pratyush Tiwari.
  */
 
-/*
- * Copyright (c) 2020.
- */
 
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
@@ -19,8 +16,8 @@ android {
         applicationId "com.tlabs.btechpapers"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 18
-        versionName "2.2.1"
+        versionCode 20
+        versionName "2.3"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -46,15 +43,15 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.firebase:firebase-storage:19.2.1'
-    implementation 'com.google.firebase:firebase-crashlytics:17.3.0'
-    implementation 'com.google.firebase:firebase-analytics:18.0.1'
+    implementation 'com.google.firebase:firebase-crashlytics:17.3.1'
+    implementation 'com.google.firebase:firebase-analytics:18.0.2'
     implementation 'com.google.firebase:firebase-perf:19.1.0'
   //  implementation 'com.google.android.gms:play-services-ads:19.6.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     // implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     //implementation 'com.google.firebase:firebase-database:19.5.1'
     implementation 'com.google.firebase:firebase-ads:19.7.0'
-    implementation 'com.google.firebase:firebase-firestore:22.0.1'
+    implementation 'com.google.firebase:firebase-firestore:22.0.2'
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

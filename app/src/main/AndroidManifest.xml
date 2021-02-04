@@ -33,11 +33,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activity.OnlineView"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-xxxxxxxxxxxxxxxxxxxxxx"/>
+            android:value="ca-app-pub-5413633427338044~3637726711" />
 
         <activity
             android:name=".Activity.Papers"
@@ -45,7 +45,8 @@
             android:screenOrientation="portrait"/>
         <activity
             android:name=".Activity.Pdf"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            />
         <activity
             android:name=".Activity.Sem"
             android:screenOrientation="portrait">
